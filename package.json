@@ -1,0 +1,26 @@
+{
+  "name": "blinky2",
+  "version": "1.0.0",
+  "description": "A server which listens for user input and blinks and LED using Node.js, Johhny-Five, socket.io & arduino.",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugesuccess/blinky"
+  },
+  "keywords": [
+    "LED",
+    "arduino",
+    "johnny-five",
+    "node",
+    "socket.io"
+  ],
+  "author": "Victor Venters",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hugesuccess/blinky/issues"
+  },
+  "homepage": "https://github.com/hugesuccess/blinky"
+}

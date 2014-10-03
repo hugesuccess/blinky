@@ -1,0 +1,41 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <style>
+        #toggle {
+            display:block;
+            margin: 150px auto;
+        }
+    </style>
+    <title>Blinky</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="javascrpts/app.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Blinky</h1>
+    <p>Tap the button to turn on the LED.</p>
+    <button id="toggle" type="button" class="btn btn-danger">Toggle Me</button>
+    <script type="text/javascript">
+
+    //Inline script tag because socket.io was being a creeper
+    var socket = io.connect('http://localhost');
+
+    $("#toggle").on({
+        mousedown: function() {
+
+            socket.emit('state', { led: 1 });
+        },
+        mouseup: function() {
+
+            socket.emit('state', { led: 0 });
+        }
+    });
+
+
+    </script>
+
+    <script type="text/javascript" src="javascripts/app.js"></script>
+</body>

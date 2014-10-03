@@ -1,6 +1,13 @@
-blinky
-======
+### Blinky
 
-Blinky Light made with Node.js, arduino, and johnny-five
+Uses socket.io, node.js, johnny-five, arduino.
+A node.js server which blinks an LED based on user input from the client.
 
-Made at www.nodeschool.io (Oakland)
+## Installation
+
+Clone the repo and set up the circuit as diagramed here[http://node-ardx.org/exercises/1].
+
+To start the server just use:
+
+```
+npm start
