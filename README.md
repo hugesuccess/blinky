@@ -1,6 +1,6 @@
 ### Blinky
 
-Blinky extends the basic introduction of johhny-five with client input support. User input is collected on the client, then sent via websocket to the server, which uses johnny-five to control the arduino.
+Blinky extends Arduino Experimenter's Guide for NodeJS -  [Excersise 1](http://node-ardx.org/exercises/1) with client input support. User input is collected on the client, then sent via websocket to the server, which uses johnny-five to control the arduino.
 
 ## Installation
 
