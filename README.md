@@ -4,7 +4,7 @@ Blinky extends Arduino Experimenter's Guide for NodeJS -  [Excersise 1](http://n
 
 ### Installation
 
-This server is based on the circuit schematic as diagramed [here][http://node-ardx.org/exercises/1].
+This server is based on the circuit schematic as diagramed [here](http://node-ardx.org/exercises/1).
 
 Once you have built your ciruit clone the repo. 
 
