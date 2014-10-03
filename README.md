@@ -4,9 +4,9 @@ Blinky extends the basic introduction of johhny-five with client input support. 
 
 ## Installation
 
-This server is based on the circuit schematic as diagramed (here)[http://node-ardx.org/exercises/1].
+This server is based on the circuit schematic as diagramed [here][http://node-ardx.org/exercises/1].
 
-Clone the repo. 
+Once you have built your ciruit clone the repo. 
 
 To start the server just use:
 
@@ -14,11 +14,13 @@ To start the server just use:
 npm start
 ```
 
-
-
-## Dependecies
+# Dependecies
 
 - node.js
 - socket.io
 - johnny-five
 - arduino 
+
+# Licence
+
+MEH
