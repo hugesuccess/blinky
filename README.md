@@ -1,8 +1,8 @@
-### Blinky
+# Blinky
 
 Blinky extends Arduino Experimenter's Guide for NodeJS -  [Excersise 1](http://node-ardx.org/exercises/1) with client input support. User input is collected on the client, then sent via websocket to the server, which uses johnny-five to control the arduino.
 
-## Installation
+### Installation
 
 This server is based on the circuit schematic as diagramed [here][http://node-ardx.org/exercises/1].
 
@@ -14,13 +14,13 @@ To start the server just use:
 npm start
 ```
 
-# Dependecies
+### Dependecies
 
 - node.js
 - socket.io
 - johnny-five
 - arduino 
 
-# Licence
+### Licence
 
 MEH
