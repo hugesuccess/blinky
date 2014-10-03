@@ -1,10 +1,12 @@
 ### Blinky
 
-A node.js server which blinks an LED based on user input from the client.
+Blinky extends the basic introduction of johhny-five with client input support. User input is collected on the client, then sent via websocket to the server, which uses johnny-five to control the arduino.
 
 ## Installation
 
-Clone the repo and set up the circuit as diagramed here[http://node-ardx.org/exercises/1].
+This server is based on the circuit schematic as diagramed (here)[http://node-ardx.org/exercises/1].
+
+Clone the repo. 
 
 To start the server just use:
 
