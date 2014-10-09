@@ -17,32 +17,20 @@
 <body>
     <h1>Blinky</h1>
     <p>Tap the button to turn on the LED.</p>
-    <button id="on" type="button" class="btn btn-danger">Buttons On</button>
-    <button id="off" type="button" class="btn btn-danger">Buttons Off</button>
-    <button id="blink" type="button" class="btn btn-danger">Buttons Blink</button>
+    <button id="on" type="button" class="btn btn-danger">Rev Engine</button>
     <script type="text/javascript">
 
     //Inline script tag because socket.io was being a creeper
     var socket = io.connect('http://localhost');
     
     $("#on").on({
-        click: function() {
-            socket.emit('state', { state: "all" });
+        mousedown: function() {
+            socket.emit('state', { motor: 1 });
+        },
+        mouseup: function() {
+            socket.emit('state', { motor: 0 });
         }
     })
- 
-    $("#off").on({
-        click: function() {
-            socket.emit('state', { state: "off" });
-        }
-    })
- 
-    $("#blink").on({
-        click: function() {
-            socket.emit('state', { state: "blink" });
-        }
-    })
-
 
     </script>
 
