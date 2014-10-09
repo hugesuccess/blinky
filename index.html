@@ -17,7 +17,7 @@
 <body>
     <h1>Blinky</h1>
     <p>Tap the button to turn on the LED.</p>
-    <button id="on" type="button" class="btn btn-danger">Rev Engine</button>
+    <button id="on" type="button" class="btn btn-danger">Sweep</button>
     <script type="text/javascript">
 
     //Inline script tag because socket.io was being a creeper
@@ -25,10 +25,10 @@
     
     $("#on").on({
         mousedown: function() {
-            socket.emit('state', { motor: 1 });
+            socket.emit('state', { servo: 1 });
         },
         mouseup: function() {
-            socket.emit('state', { motor: 0 });
+            socket.emit('state', { servo: 0 });
         }
     })
 
