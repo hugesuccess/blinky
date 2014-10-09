@@ -17,19 +17,16 @@
 <body>
     <h1>Blinky</h1>
     <p>Tap the button to turn on the LED.</p>
-    <button id="on" type="button" class="btn btn-danger">Sweep</button>
+    <button id="on" type="button" class="btn btn-danger">Start LED's</button>
     <script type="text/javascript">
 
     //Inline script tag because socket.io was being a creeper
     var socket = io.connect('http://localhost');
     
     $("#on").on({
-        mousedown: function() {
-            socket.emit('state', { servo: 1 });
+        click: function() {
+            socket.emit('state', { start: 1 });
         },
-        mouseup: function() {
-            socket.emit('state', { servo: 0 });
-        }
     })
 
     </script>
