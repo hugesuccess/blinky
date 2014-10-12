@@ -16,29 +16,18 @@
 </head>
 <body>
     <h1>Example 7: Button Pressing</h1>
-    <div class="progress">
-      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-        <span class="sr-only">20% Complete</span>
-      </div>
-    </div>
+    <p>The Lights are <span>OFF</span></p>
     <script type="text/javascript">
 
     //Inline script tag because socket.io was being a creeper
     var socket = io.connect('http://localhost');
 
     socket.on('state', function(data) {
-        console.log(data);
-        $('.progress-bar').css('width', data.led + "%");
-        if(data.led > 50) {
-            $('.progress-bar')
-                .removeClass('progress-bar-info')
-                .addClass('progress-bar-danger');
-        }else {
-            $('.progress-bar')
-                .removeClass('progress-bar-danger')
-                .addClass('progress-bar-info');
-        }
-    })
+        if(data.on)
+            return $('span').html('ON');
+
+        return $('span').html('OFF');
+   })
     
    </script>
 
