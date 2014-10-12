@@ -1,31 +1,23 @@
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var five = require("johnny-five"),
-    board, myPhotoresistor, myLed, sock = false;
+var five = require("johnny-five");
+var sock = false;
 
-board = new five.Board();
 server.listen(3000);
 
 app.get('/', function(req, res) {
     res.sendfile(__dirname + "/index.html");
 });
 
-board.on("ready", function() {
-  myLed = new five.Led(9);
-  myPhotoresistor = new five.Sensor({
-    pin: "A0",
-    freq: 250
-  });
-  myPhotoresistor.on("read", function( err, value ) {
-    var threshold = 300;
-    if (value > threshold) {
-        myLed.on();
-        if(sock) sock.emit('state', {on: 1});
-    } else {
-        myLed.off();
-        if(sock) sock.emit('state', {on: 0});
-    }
+
+five.Board().on("ready", function(){
+  var tempSensor = new five.Sensor("A0");
+  tempSensor.on("read", function(err, value){
+    var cel = (100 * (value / 1000) - 50).toFixed(2);
+    if(isNaN(cel)) return false;
+    console.log("temp is " + cel);
+    if(sock) sock.emit('state', {temp: cel});
   });
 });
 
