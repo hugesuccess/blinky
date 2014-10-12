@@ -15,21 +15,19 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-    <h1>Blinky</h1>
-    <p>Tap the button to turn on the LED.</p>
-    <button id="on" type="button" class="btn btn-danger">Start LED's</button>
+    <h1>Example 7: Button Pressing</h1>
+    <p>The LED is: <span>OFF</span></p>
     <script type="text/javascript">
 
     //Inline script tag because socket.io was being a creeper
     var socket = io.connect('http://localhost');
-    
-    $("#on").on({
-        click: function() {
-            socket.emit('state', { start: 1 });
-        },
-    })
 
-    </script>
+    socket.on('state', function(data) {
+        if(data.led) return $('span').html("ON");
+        return $('span').html("OFF");
+    })
+    
+   </script>
 
     <script type="text/javascript" src="javascripts/app.js"></script>
 </body>
